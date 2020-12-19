@@ -4,3 +4,4 @@
 
 echo hellow world
 echo Good morningss
+echo "hello, \n\n welcome to todays session, \n\n regards,\n nikk"
