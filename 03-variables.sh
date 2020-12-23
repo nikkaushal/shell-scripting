@@ -1,8 +1,8 @@
 #!bin/bash
 
-course_name = DevOps
-echo welcome to $course_name training
-echo $course_name Training timings -6AM
-echo $course_name triner- nik
+COURSE_NAME = DevOps
+echo welcome to $COURSE_NAME training
+echo $COURSE_NAME Training timings -6AM
+echo $COURSE_NAME triner- nik
 
 
