@@ -25,3 +25,7 @@ echo -e "\e[31mRED Text"
 echo -e "\e[32mGREEN Text"
 echo -e "\e[33mYELLOW Text"
 echo -e "\e[41;33mYELLOW Text on RED"
+
+#color we enable will not be disabled, moves to next line
+
+echo -e "\e[41;33mYELLOW Text on RED\e0m"
