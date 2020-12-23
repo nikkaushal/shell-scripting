@@ -35,3 +35,5 @@ echo -e "\e[41;33mYELLOW Text on RED\e[0m"
 # Bold characters- 1
 
 echo -e "\e[33mYellow normal, \e[1;33mBold yellow\e[0m"
+
+echo -e "\e[33mYellow normal, \e[1;4;33mBold yellow\e[0m"
