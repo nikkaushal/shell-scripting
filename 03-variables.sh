@@ -24,4 +24,13 @@ echo "Good Morning, today' date is $DATE"
 
 ADD=$((4+7))
 
-echo $ADD 
+echo $ADD
+
+
+#Datatypes
+a=10 # integer
+b=xyz #string
+c=9.999 #float
+d=true #boolean
+
+echo a = $a, b=$b, c=$c, d=$d
