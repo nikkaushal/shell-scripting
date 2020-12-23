@@ -21,3 +21,7 @@ echo $COURSE_NAME triner- nik
 
 DATE=$(date +%F)
 echo "Good Morning, today' date is $DATE"
+
+ADD=$((4+7))
+
+echo $ADD 
