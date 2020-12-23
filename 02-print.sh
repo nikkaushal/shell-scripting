@@ -23,5 +23,5 @@ echo -e "hello, \n\n\twelcome to todays session, \n\n regards,\n nikk"
 
 echo -e "\e[31mRED Text"
 echo -e "\e[32mGREEN Text"
-echo -e "\e[33YELLOW Text"
-echo -e "\e[41; 33mYELLOW Text on RED"
+echo -e "\e[33mYELLOW Text"
+echo -e "\e[41;33mYELLOW Text on RED"
