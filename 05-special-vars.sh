@@ -14,3 +14,5 @@ echo second arg= $2
 
 echo "all arguments (*)= $*"
 echo "all argumemts (@) = $@"
+
+echo number of arguments = $#
