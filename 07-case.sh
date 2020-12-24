@@ -6,5 +6,5 @@ case $1 in
     ;;
   mongo)
     echo installing Mongo
-    ::
+    ;;
 esac
