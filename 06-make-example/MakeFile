@@ -1,0 +1,6 @@
+#use tab space after
+
+frontend:
+	@echo installing frontend
+mongo:
+	@echo installing mongo
