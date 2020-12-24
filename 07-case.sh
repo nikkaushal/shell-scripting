@@ -1,7 +1,7 @@
 #!bin/bash
 
 case $1 in
-  frontend)
+  frontends)
     echo Installing frontend
     ;;
   mongo)
