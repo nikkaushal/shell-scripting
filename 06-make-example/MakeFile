@@ -1,4 +1,4 @@
 frontend:
-	@echo installing frontend
+		@echo installing frontend
 mongo:
-	@echo installing mongo
+		@echo installing mongo
