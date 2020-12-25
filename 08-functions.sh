@@ -7,7 +7,7 @@ function SAMPLE() {
   echo Hello from sample function
   a=10
   echo B=$b
-
+}
 #way2
 
 SAMPLE1() {
