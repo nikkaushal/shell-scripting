@@ -1,4 +1,7 @@
 #!bin/bash
+
+COMPONENT=MongoDB
+
 source components/common.sh
 
-INFO "setup frontend component"
+INFO "setup MongoDB component"
