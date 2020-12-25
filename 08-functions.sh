@@ -16,5 +16,5 @@ SAMPLE1() {
 
 #call a function
 
-SAMPLES
+SAMPLE
 SAMPLE1
