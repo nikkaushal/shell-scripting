@@ -25,3 +25,11 @@ echo A =$a
 
 #you delcare a variable in main program and you can overwrite variable in function and vice-versa
 
+# inputs to functions using special variables
+
+
+SAMPLE2() {
+  echo first argument = $1
+  echo second argumemt =$2
+}
+SAMPLE2 10 20
