@@ -1,3 +1,4 @@
 #!bin/bash
+source components/common.sh
 
-echo installing mongo
+INFO "setup frontend component"
