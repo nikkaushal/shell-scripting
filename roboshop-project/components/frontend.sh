@@ -17,6 +17,6 @@ echo -e "[\e[1;34mINFO\e[0m] [\e[1;35mfrontend\e[0m]  [\e[1;36m$(date '+%F %T')\
 
 
 INFO "setup frontend component"
-INFP "installing nginx"
-SUCESS "installed nginx"
+INFO "installin g nginx"
+SUCCESS "installed nginx"
 FAIL "installed nginx"
