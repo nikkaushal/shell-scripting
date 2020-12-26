@@ -12,8 +12,8 @@ echo -e "[\e[1;31mFAILURE\e[0m] [\e[1;35m${COMPONENT}\e[0m]  [\e[1;36m$(date '+%
 }
 
 #verify user is root or not
-USER_ID =$(id-u)
-case $USER_ID IN
+USER_ID =$(id -u)
+case $USER_ID in
   0)
   true ##nothing to perform so we choose true
   ;;
