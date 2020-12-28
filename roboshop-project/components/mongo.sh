@@ -17,7 +17,16 @@ STAT $? "Repository setup"
 INFO "Install MongoDB"
 yum install -y mongodb-org &>>$LOG_FILE
 STAT $? "MongoDB install"
+INFO "Update mongodb configuration"
+sed -i 's/127.0.0.1/0.0.0.0' /etc/mongod.conf
+STAT $? "MongoDB Configuration update"
 
-# systemctl enable mongod
-# systemctl start mongod
+INFO"Restart MongoDB"
+systemctl enable mongod &>>$LOG_FILE
+systemctl restart mongod &>>$LOG_FILE
+STAT $? "MongDB Restart"
+
+INFO "Downloading MongoDB Schema"
+DOWNLOAD_ARTIFACT "https://dev.azure.com/DevOps-Batches/f635c088-1047-40e8-8c29-2e3b05a38010/_apis/git/repositories/03f2af34-e227-44b8-a9f2-c26720b34942/items?path=%2F&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=master&resolveLfs=true&%24format=zip&api-version=5.0&download=true"
+
 # /etc/mongod.conf 127.0.0.1 to 0.0.0.0
