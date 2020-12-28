@@ -9,6 +9,8 @@ SUCCESS() {
 
 FAIL (){
 echo -e "[\e[1;31mFAILURE\e[0m] [\e[1;35m${COMPONENT}\e[0m]  [\e[1;36m$(date '+%F %T')\e[0m] $1"
+echo -e "\n Refer log file : $LOG_FILE for more information"
+exit 1
 }
 
 
