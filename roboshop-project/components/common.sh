@@ -12,8 +12,6 @@ echo -e "[\e[1;31mFAILURE\e[0m] [\e[1;35m${COMPONENT}\e[0m]  [\e[1;36m$(date '+%
 }
 
 
-LOG_FILE=/tmp/roboshop.log
-rm -f $LOG_FILE
 #verify user is root or not
 USER_ID=$(id -u)
 case $USER_ID in
@@ -25,3 +23,6 @@ case $USER_ID in
    exit 1
    ;;
  esac
+
+LOG_FILE=/tmp/roboshop.log
+rm -f $LOG_FILE
