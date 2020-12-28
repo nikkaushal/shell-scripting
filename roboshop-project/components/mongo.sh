@@ -1,6 +1,6 @@
 #!bin/bash
 
-COMPONENT=MongoDB
+COMPONENT=mongodb
 
 source components/common.sh
 
