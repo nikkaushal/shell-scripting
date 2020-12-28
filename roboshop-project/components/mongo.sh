@@ -18,10 +18,10 @@ INFO "Install MongoDB"
 yum install -y mongodb-org &>>$LOG_FILE
 STAT $? "MongoDB install"
 INFO "Update mongodb configuration"
-sed -i 's/127.0.0.1/0.0.0.0' /etc/mongod.conf
+sed -i 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 STAT $? "MongoDB Configuration update"
 
-INFO"Restart MongoDB"
+INFO "Restart MongoDB"
 systemctl enable mongod &>>$LOG_FILE
 systemctl restart mongod &>>$LOG_FILE
 STAT $? "MongDB Restart"
