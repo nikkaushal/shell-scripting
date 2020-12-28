@@ -6,3 +6,4 @@ source components/common.sh
 INFO "setup frontend component"
 INFO "installing nginx"
 yum install nginx -y &>>$LOG_FILE
+STAT $? "Nginx Installation"
