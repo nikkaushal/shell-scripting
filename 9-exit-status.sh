@@ -11,4 +11,4 @@
 #we can use that number with the help of exit command
 # exit 0-125, it is user states
 
-exit 0
+exit 1
