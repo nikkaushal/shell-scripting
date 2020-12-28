@@ -30,7 +30,7 @@ rm -f $LOG_FILE
 STAT(){
   case $1 in
   0)
-    SUCC "$2"
+    SUCCESS "$2"
     ;;
   *)
     FAIL "$2"
