@@ -9,3 +9,12 @@ mongo:
 
 catalogue:
 	@sh components/catalogue.sh
+
+redis:
+	@sh components/redis.sh
+
+user:
+	@sh components/user.sh
+
+cart:
+	@sh components/cart.sh
