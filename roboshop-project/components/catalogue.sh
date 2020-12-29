@@ -32,3 +32,18 @@ INFO "Install nodejs dependencies"
 npm install --unsafe-perm &>>$LOG_FILE
 STAT $? "NodeJs dependencies installation"
 chown roboshop:roboshop /home/roboshop/${COMPONENT} -R
+
+INFO "configuring catalogue startup script"
+sed -i -e "s/MONGO_DNSNAME/mongodb-test.devopsnik.tk/" /home/roboshop/catalogue/systemd.service
+STAT $? "startup script configuration"
+
+INFO "Setup systemD service for catalogue"
+mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
+systemctl daemon-reload
+STAT $? "Catalogue SystemD Service"
+
+INFO "Starting catalogue service"
+systemctl enable catalogue &>>$LOG_FILE
+systemctl start catalogue &>>$LOG_FILE
+STAT $? "Catalogue service start"
+
