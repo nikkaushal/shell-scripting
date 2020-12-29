@@ -25,7 +25,7 @@ DOWNLOAD_ARTIFACT "https://dev.azure.com/DevOps-Batches/f635c088-1047-40e8-8c29-
 INFO "Extract Artifacts"
 mkdir -p /home/roboshop/${COMPONENT}
 cd /home/roboshop/${COMPONENT}
-unzip /tmp/${COMPONENT}.zip &>>$LOG_FILE
+unzip -o /tmp/${COMPONENT}.zip &>>$LOG_FILE
 STAT $? "Extract artifact"
 
 INFO "Install nodejs dependencies"
