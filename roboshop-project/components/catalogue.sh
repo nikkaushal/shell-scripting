@@ -26,7 +26,7 @@ INFO "Extract Artifacts"
 mkdir -p /home/roboshop/${COMPONENT}
 cd /home/roboshop/${COMPONENT}
 unzip -o /tmp/${COMPONENT}.zip &>>$LOG_FILE
-STAT $? "Extract artifact"
+STAT $? "Artifacts Extract"
 
 INFO "Install nodejs dependencies"
 npm install --unsafe-perm &>>$LOG_FILE
