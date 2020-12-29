@@ -11,7 +11,7 @@ yum-config-manager --enable remi  &>>$LOG_FILE
 STAT $? "YUM repos configured"
 
 INFO "Install Redis"
-yum install redis
+yum install redis -y &>>$LOG_FILE
 STAT $? "Redis Install"
 
 INFO "Set up redis configuration"
