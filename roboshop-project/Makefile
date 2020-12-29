@@ -18,3 +18,15 @@ user:
 
 cart:
 	@sh components/cart.sh
+
+mysql:
+	@sh components/mysql.sh
+
+payment:
+	@sh components/payment.sh
+
+rabbitmq:
+	@sh components/rabbitmq.sh
+
+shipping:
+	@sh components/shipping.sh
