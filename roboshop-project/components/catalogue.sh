@@ -29,5 +29,5 @@ unzip -o /tmp/${COMPONENT}.zip &>>$LOG_FILE
 STAT $? "Extract artifact"
 
 INFO "Install nodejs dependencies"
-npm install &>>$LOG_FILE
+npm install --unsafe-perm &>>$LOG_FILE
 STAT $? "NodeJs dependencies installation"
