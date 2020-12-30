@@ -31,19 +31,20 @@ STAT $? "Artifacts extract"
 chown roboshop:roboshop /home/roboshop/${COMPONENT} -R &>>$LOG_FILE
 
 INFP "Install python dependencies"
-pip3 install -r requirements.txt
+pip3 install -r requirements.txt &>>$LOG_FILE
 STAT $? "Dependencies download"
 
 INFO "configuring payment startup script"
 sed -i -e "s/CARTHOST/cart-test.devopsnik.tk/" \
       -e "s/USERHOST/user-test.devopsnik.tk/" \
       -e "s/AMPQHOST/rabbitmq-test.devopsnik.tk/" \
- /home/roboshop/catalogue/systemd.service
+ /home/roboshop/${COMPONENT}/systemd.service
 
 USER_UID=${ID-u centos}
 USER_GID=${ID-g centos}
 sed -i -e "/uid =/ c uid = ${USER_UID}" \
        -e "/gid =/ c gid = ${USER_GID}" \
+       /home/roboshop/${COMPONENT}/payment.ini
 STAT $? "startup script configuration"
 
 INFO "Setup systemD service for payment"
