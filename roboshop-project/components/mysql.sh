@@ -30,7 +30,7 @@ MYSQL_DEFAULT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '
 )
 
 INFO "Reset mysql password"
-echo show databases | mysql -u root ppassword &>>$LOG_FILE
+echo show databases | mysql -u root -ppassword &>>$LOG_FILE
 case $? in
   0)
     STAT 0 "Password reset"
