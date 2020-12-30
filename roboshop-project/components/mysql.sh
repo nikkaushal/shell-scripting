@@ -29,7 +29,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';" >/tmp/schema.sql
 MYSQL_DEFAULT_PASSWORD=$(grep 'A temporary password' temp /var/log/mysqld.log | awk '{print $NF}'
 )
 INFO "Reset mysql password"
-mysql --connect-expired-password -u root -p${MYSQL_DEFAULT_PASSWORD} </tmp/schema.sql
+mysql --connect-expired-password -u root -p${MYSQL_DEFAULT_PASSWORD} </tmp/schema.sql &>>$LOG_FILE
 STAT $? "Password reset"
 
 # mysql_secure_installation
