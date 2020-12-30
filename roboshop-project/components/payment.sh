@@ -40,8 +40,8 @@ sed -i -e "s/CARTHOST/cart-test.devopsnik.tk/" \
       -e "s/AMPQHOST/rabbitmq-test.devopsnik.tk/" \
  /home/roboshop/${COMPONENT}/systemd.service
 
-USER_UID=${ID -u roboshop}
-USER_GID=${ID -g roboshop}
+USER_UID=${id-u roboshop}
+USER_GID=${id -g roboshop}
 sed -i -e "/uid =/ c uid = ${USER_UID}" \
        -e "/gid =/ c gid = ${USER_GID}" \
        /home/roboshop/${COMPONENT}/payment.ini
