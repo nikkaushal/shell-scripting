@@ -3,7 +3,7 @@
 COMPONENT=rabbitmq
 
 source components/common.sh
-
+INFO "Set up RabbitMQ component"
 INFO "Erlang is a dependency which is needed for RabbitMQ."
 yum list esl-erlang &>>$LOG_FILE
 case $? in
