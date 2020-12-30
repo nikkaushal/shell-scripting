@@ -5,7 +5,7 @@ COMPONENT=payment
 source components/common.sh
 INFO "Setup Payment Component"
 INFO "installing python3"
-yum install python36 gcc python3-devel -y
+yum install python36 gcc python3-devel -y &>>$LOG_FILE
 STAT $? "Install python"
 
 INFO "Create Application user"
