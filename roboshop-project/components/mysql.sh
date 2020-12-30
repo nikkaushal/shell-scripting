@@ -45,7 +45,7 @@ DOWNLOAD_ARTIFACT "https://dev.azure.com/DevOps-Batches/f635c088-1047-40e8-8c29-
 
 INFO "Load schema"
 cd /tmp
-unzip -o mysql.zip
+unzip -o mysql.zip &>>$LOG_FILE
 mysql -u root -ppassword <shipping.sql &>>$LOG_FILE
 STAT $? "Schema load"
 
