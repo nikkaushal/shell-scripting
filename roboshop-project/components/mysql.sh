@@ -22,3 +22,12 @@ systemctl enable mysqld &>>$LOG_FILE
 systemctl start mysqld &>>$LOG_FILE
 STAT $? "mysql service startup"
 
+echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'P@Ssw0rd123';
+uninstall plugin validate_password;
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';" >/tmp/schema.sql
+
+MYSQL_DEFAULT_PASSWORD=$(grep 'A temporary password' temp /var/log/mysqld.log | awk '{print $NF}'
+)
+mysql -u root -p${MYSQL_DEFAULT_PASSWORD} </tmp/schema.sql
+
+# mysql_secure_installation
