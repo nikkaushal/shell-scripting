@@ -5,8 +5,16 @@ COMPONENT=rabbitmq
 source components/common.sh
 
 INFO "Erlang is a dependency which is needed for RabbitMQ."
-yum install https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_22.2.1-1~centos~7_amd64.rpm -y &>>$LOG_FILE
-STAT $? "Erlang is a dependency which is needed for RabbitMQ"
+yum list esl-erlang &>>$LOG_FILE
+case $? in
+  0)
+    STAT 0 "erlang installation"
+  ;;
+  1)
+    yum install https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_22.2.1-1~centos~7_amd64.rpm -y &>>$LOG_FILE
+    STAT $? "Erlang is a dependency which is needed for RabbitMQ"
+  ;;
+esac
 
 INFO "Setup YUM repositories for RabbitMQ"
 curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash &>>$LOG_FILE
