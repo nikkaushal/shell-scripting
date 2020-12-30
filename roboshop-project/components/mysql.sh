@@ -28,9 +28,9 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';" >/tmp/schema.sql
 
 MYSQL_DEFAULT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}'
 )
-echo show databases | mysql -u root ppassword &>>$LOG_FILE
 
 INFO "Reset mysql password"
+echo show databases | mysql -u root ppassword &>>$LOG_FILE
 case $? in
   0)
     STAT 0 "Password reset"
