@@ -26,10 +26,18 @@ echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'P@Ssw0rd123';
 uninstall plugin validate_password;
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';" >/tmp/schema.sql
 
-MYSQL_DEFAULT_PASSWORD=$(grep 'A temporary password' temp /var/log/mysqld.log | awk '{print $NF}'
+MYSQL_DEFAULT_PASSWORD=$(grep 'A temporary password' /var/log/mysqld.log | awk '{print $NF}'
 )
-INFO "Reset mysql password"
-mysql --connect-expired-password -u root -p${MYSQL_DEFAULT_PASSWORD} </tmp/schema.sql &>>$LOG_FILE
-STAT $? "Password reset"
+echo show databases | mysql -u root ppassword &>>$LOG_FILE
 
+INFO "Reset mysql password"
+case $? in
+  0)
+    STAT 0 "Password reset"
+    ;;
+  1)
+    mysql --connect-expired-password -u root -p${MYSQL_DEFAULT_PASSWORD} </tmp/schema.sql &>>$LOG_FILE
+    STAT $? "Password reset"
+    ;;
+esac
 # mysql_secure_installation
