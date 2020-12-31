@@ -11,7 +11,7 @@ case $1 in
     echo updating routes
     for component in frontend cart catalogue user rabbitmq reddis payment mysql mongo redis; do
     echo "launching $component spot instances"
-    IP=(aws ec2 describe-instances --filters Name=tag:Name,Values=${component} Name=instance-state-name,Values=running | jq '.Reservations[].Instances[].PrivateIpAddress')
+    IP=$(aws ec2 describe-instances --filters Name=tag:Name,Values=${component} Name=instance-state-name,Values=running | jq '.Reservations[].Instances[].PrivateIpAddress')
    echo $component $IP
    done
   ;;
