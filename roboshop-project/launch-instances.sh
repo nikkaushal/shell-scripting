@@ -12,7 +12,8 @@ case $1 in
     for component in frontend cart catalogue user rabbitmq reddis payment mysql mongo redis; do
     IP=$(aws ec2 describe-instances --filters Name=tag:Name,Values=${component} Name=instance-state-name,Values=running | jq '.Reservations[].Instances[].PrivateIpAddress')
    echo $component $IP
-   sed -e "s/IPADDRESS/${IP}/" -e "s/COMPONENT/${component}/" record.json
+   sed -e "s/IPADDRESS/${IP}/" -e "s/COMPONENT/${component}/" record.json >/tmp/${component}.json
+   aws route53 change-resource-record-sets --hosted-zone-id Z0869909I3INDIN3CQDX --change-batch file:///tmp/${component}.json
    done
   ;;
 esac
