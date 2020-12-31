@@ -12,6 +12,7 @@ case $1 in
     for component in frontend cart catalogue user rabbitmq reddis payment mysql mongo redis; do
     IP=$(aws ec2 describe-instances --filters Name=tag:Name,Values=${component} Name=instance-state-name,Values=running | jq '.Reservations[].Instances[].PrivateIpAddress')
    echo $component $IP
+   sed -e "s/IPADDRESS/${IP}/" record.json
    done
   ;;
 esac

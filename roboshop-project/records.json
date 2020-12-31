@@ -1,9 +1,9 @@
 {
   "Comment": "CREATE/DELETE/UPSERT a record ",
   "Changes": [{
-    "Action": "UPSERT",
+    "Action": "CREATE",
     "ResourceRecordSet": {
-      "Name": "COMPONENT-test.devopsnik.tk",
+      "Name": "devopsnik.tk",
       "Type": "A",
       "TTL": 300,
       "ResourceRecords": [{ "Value": IPADDRESS}]
