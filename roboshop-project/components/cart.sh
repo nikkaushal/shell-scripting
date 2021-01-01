@@ -43,5 +43,5 @@ STAT $? "cart SystemD Service"
 
 INFO "Starting cart service"
 systemctl enable ${COMPONENT} &>>$LOG_FILE
-systemctl start ${COMPONENT} &>>$LOG_FILE
+systemctl restart ${COMPONENT} &>>$LOG_FILE
 STAT $? "cart service start"

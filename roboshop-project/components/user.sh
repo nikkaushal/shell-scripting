@@ -43,5 +43,5 @@ STAT $? "user SystemD Service"
 
 INFO "Starting user service"
 systemctl enable ${COMPONENT} &>>$LOG_FILE
-systemctl start ${COMPONENT} &>>$LOG_FILE
+systemctl restart ${COMPONENT} &>>$LOG_FILE
 STAT $? "user service start"

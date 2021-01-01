@@ -20,5 +20,5 @@ STAT $? "Redis configuration setup"
 
 INFO "Start Redis Service"
 systemctl enable redis &>>$LOG_FILE
-systemctl start redis &>>$LOG_FILE
+systemctl restart redis &>>$LOG_FILE
 STAT $? "Redis service start"
