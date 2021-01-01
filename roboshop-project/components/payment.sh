@@ -37,14 +37,14 @@ STAT $? "Dependencies download"
 INFO "configuring payment startup script"
 sed -i -e "s/CARTHOST/cart-test.devopsnik.tk/" \
       -e "s/USERHOST/user-test.devopsnik.tk/" \
-      -e "s/AMPQHOST/rabbitmq-test.devopsnik.tk/" \
+      -e "s/AMQPHOST/rabbitmq-test.devopsnik.tk/" \
  /home/roboshop/${COMPONENT}/systemd.service
 
 USER_UID=$(id -u roboshop)
 USER_GID=$(id -g roboshop)
 sed -i -e "/uid =/ c uid = ${USER_UID}" \
        -e "/gid =/ c gid = ${USER_GID}" \
-       /home/roboshop/${COMPONENT}/payment.ini
+         /home/roboshop/${COMPONENT}/payment.ini
 STAT $? "startup script configuration"
 
 INFO "Setup systemD service for payment"
