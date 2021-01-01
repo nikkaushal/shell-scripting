@@ -33,7 +33,7 @@ STAT $? "NodeJs dependencies installation"
 chown roboshop:roboshop /home/roboshop/${COMPONENT} -R
 
 INFO "configuring user startup script"
-sed -i -e "s/MONGO_ENDPOINT/mongodb-test.devopsnik.tk/" -e "s/REDIS_ENDPOINT/redis-test.devopsnik.tk/" /home/roboshop/${COMPONENT}/systemd.service
+sed -i -e "s/MONGO_ENDPOINT/mongo-test.devopsnik.tk/" -e "s/REDIS_ENDPOINT/redis-test.devopsnik.tk/" /home/roboshop/${COMPONENT}/systemd.service
 STAT $? "startup script configuration"
 
 INFO "Setup systemD service for user"
