@@ -23,12 +23,6 @@ rm -rf static README.md #not really needed, those files will not harm anything
 
 INFO "Update Nginx configuration"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
-sed -i -e "/catalogue/ s/localhost/catalogue-test.devopsnik.tk/" \
-      -e "/cart/ s/localhost/cart-test.devopsnik.tk/" \
-      -e "/user/ s/localhost/user-test.devopsnik.tk/" \
-      -e "/shipping/ s/localhost/shipping-test.devopsnik.tk/" \
-      -e "/payment/ s/localhost/payment-test.devopsnik.tk/" \
-     /etc/nginx/default.d/roboshop.conf
 STAT $? "Nginx configuration update"
 
 INFO "Start NGINX service"
