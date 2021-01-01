@@ -3,7 +3,7 @@
   "Changes": [{
     "Action": "UPSERT",
     "ResourceRecordSet": {
-      "Name": "COMPONENT-TEST",
+      "Name": "COMPONENT-TEST.devopsnik.tk",
       "Type": "A",
       "TTL": 300,
       "ResourceRecords": [{ "Value": IPADDRESS}]
