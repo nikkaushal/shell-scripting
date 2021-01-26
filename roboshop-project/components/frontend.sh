@@ -33,7 +33,7 @@ STAT $? "Nginx configuration update"
 
 INFO "Start NGINX service"
 systemctl enable nginx  &>>$LOG_FILE
-systemctl restart nginx &>>$LOG_FILE
+#systemctl restart nginx &>>$LOG_FILE
 STAT $? "NGINX Service Startup"
 
 
